@@ -1,0 +1,14 @@
+<?php
+    //Lấy id của product cần xóa
+    $id = $_GET["id"];
+    //Mở kết nối
+    include_once "../Connection/open.php";
+    //Viết sql
+    $sql = "DELETE FROM products WHERE id = '$id'";
+    //Chạy sql
+    mysqli_query($connection, $sql);
+    //Đóng kết nối
+    include_once "../Connection/close.php";
+    //Quay lại danh sách
+    header('location: index.php');
+?>
