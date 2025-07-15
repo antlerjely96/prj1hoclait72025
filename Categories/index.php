@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,6 +9,14 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+        if(!isset($_SESSION['customer_email'])){
+            header("Location: ../Login/index.php");
+        }
+    ?>
+    <h3>
+        <a href="../Login/logout.php">Đăng xuất</a>
+    </h3>
     <h3>Danh sách danh mục</h3>
     <a href="create.php">Thêm danh mục</a>
     <table border="1px" cellpadding="0" cellspacing="0" width="100%">
